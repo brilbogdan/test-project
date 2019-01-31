@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>
+            Test Project
+        </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <style>
+            body{
+                margin: 0;
+                color: #5f6368;
+            }
+            *{
+                box-sizing: border-box;
+            }
+            a{
+                text-decoration: none;
+                color:#0684bd;
+            }
+            a:hover{
+                text-decoration: underline;
+                opacity: .8;
+            }
+
+            .top-up__pop-up{
+                display: none;
+                width: 300px;
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                border: 1px solid black;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .top-up__pop-up--show{
+                display: block;
+            }
+            .button__top-up--close{
+                display: block;
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="user">
+                <div class="user__greeting">
+                    Hello,
+                    <span class="user__name"></span>
+                </div>
+                <div class="user__balance">
+                    Your Balance:
+                    <span class="user__amount"></span>
+                </div>
+                <div class="button">
+                    <a href="#" class="button__top-up--open">
+                        Top Up
+                    </a>
+                </div>
+            </div>
+            
+        </header>
+
+        <div class="top-up__pop-up">
+            <form action="">
+                <a href="#" class="button__top-up--close">Close</a>
+                <ul class="amount__wrapper">
+
+                </ul>
+            </form>
+        </div>
+
+        <script src="js/index.js"></script>
+    </body>
+</html>
