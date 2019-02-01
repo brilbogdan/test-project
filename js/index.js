@@ -1,25 +1,23 @@
 ;(function() {
     'use strict';
     class UserInfo{
-        constructor(el) {
+        constructor(userElem,popUpElem) {
             //User Classes
-            this.userAmount = $(el).find('.user__amount');
-            this.userName = $(el).find('.user__name');
-            this.handleTopUpButtonOpen = $(el).find('.button__top-up--open');
+            this.userAmount = $(userElem).find('.user__amount');
+            this.userName = $(userElem).find('.user__name');
+            this.handleTopUpButtonOpen = $(userElem).find('.button__top-up--open');
 
             //Pop-Up Classes
-            this.topUpPopUp = $('body').find('.top-up__pop-up');
-            this.amountWrapper = $('body').find('.amount__wrapper');
-            this.handleTopUpButtonClose = $('body').find('.button__top-up--close');
-            this.handleLinkToCopy = $('body').find('.button__hash-for-copy');
-
+            this.topUpPopUp = $(popUpElem);
+            this.amountWrapper = $(popUpElem).find('.amount__wrapper');
+            this.handleTopUpButtonClose = $(popUpElem).find('.button__top-up--close');
+            this.handleLinkToCopy = $(popUpElem).find('.button__hash-for-copy');
 
             this.handleTopUpClick = this.handleTopUpClick.bind(this);
             this.handleTopUpClickClose = this.handleTopUpClickClose.bind(this);
 
             this.attachEvents();
             this.getUserInfo();
-
         }
 
         attachEvents() {
@@ -127,14 +125,9 @@
 
 
     $(function() {
-        const elems = $(".user");
+        const userElem = $(".user");
+        const popUpelem = $(".top-up__pop-up");
 
-        if ( ! elems.length ) {
-            return;
-        }
-
-        elems.each(function() {
-            new UserInfo(this);
-        });
+        new UserInfo(userElem, popUpelem);
 	});
 })();
